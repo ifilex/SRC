@@ -1,0 +1,8 @@
+REM Se carga el driver de sonido configurado a I = 5 D = 1 H = 5
+REM Si quiere cambiar alguna de las opciones del driver cambiela modificando
+REM las opciones dadas en CTSB16.
+LOAD=LIB\CTSB16.DRV /UNIT=0 /BLASTER=A:220 I:5 D:1 H:5
+REM Complemento de sonido para verificacion.
+LOAD=LIB\CTMMSYS.DRV
+REM Cambio de unidad de filas.
+FILES=40

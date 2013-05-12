@@ -1,0 +1,116 @@
+
+		     _____ ______ _______ _    _ _____
+		    / ____|  ____|__   __| |  | |  __ \
+		   | (___ | |__     | |  | |  | | |__) |
+		    \___ \|  __|    | |  | |  | |  ___/
+		    ____) | |____   | |  | |__| | |
+		   |_____/|______|  |_|   \____/|_|
+
+
+		   by Shawn Hargreaves / David Calvin
+
+
+
+
+Introduction
+------------
+
+This program is a simple interface for setting up a hardware configuration 
+file for use with Allegro (usually called allegro.cfg). It will allow you to 
+autodetect your soundcard or set it up manually, to select a keyboard 
+layout, to choose which language Allegro should use for things like driver 
+error messages, and to calibrate your joystick. It also provides a test 
+system to make sure the settings you have chosen are working properly.
+
+
+
+Files
+-----
+
+setup.c        -  source code
+setup.exe      -  main program file
+setup.dat      -  datafile containing test sounds and graphics
+setup.txt      -  you're reading it now
+allegro.cfg    -  created by setup.exe to save settings
+
+
+
+Installation
+------------
+
+If you are a user of an Allegro based program, installation is simple. Copy 
+setup.exe into the directory of the program you are using and you're all 
+set. The configuration file will always be saved into the current directory, 
+so it is essential that you run it from the same directory as your program!
+
+If you are a developer of an Allegro based program, you may distribute 
+copies of this utility along with your code, and modify it in any way that 
+strikes your fancy (see below). You only need to include the file setup.exe, 
+because setup.dat is linked directly into the executable and is thus not 
+required at runtime.
+
+
+
+Usage
+-----
+
+The simplest case of usage is this:
+
+   *  run setup.exe
+   *  click on autodetect
+   *  test to make sure the settings work
+   *  optionally choose a keyboard layout and/or language
+   *  optionally calibrate your joystick
+   *  save and exit
+
+If there are any problems, use the "Digital Driver" and "MIDI Driver" menus 
+to manually set your soundcard parameters. Whenever you highlight an option, 
+a help message explaining what it does will scroll across the bottom of your 
+screen.
+
+
+
+Customisation
+-------------
+
+If you want to distribute setup with your own programs, you are very welcome 
+to alter it to suit your own requirements. There are several particularly 
+easy things you can do:
+
+   *  Change the TITLE define at the top of setup.c, and make it use the 
+      name of your own program.
+
+   *  Change the CFG_FILE define at the top of setup.c, to alter what file 
+      the settings are written into. If you use anything other than 
+      allegro.cfg or sound.cfg, you will need to call set_config_file() at 
+      the start of your program to tell it where the data can be found.
+
+   *  Change the test sample and MIDI file in setup.dat.
+
+   *  Change the background bitmap and palette in setup.dat. You can use any 
+      256 color 320x200 image, but there are a few rules that it has to 
+      obey. There must be blank (color zero) borders of at least 16 pixels 
+      along the top and bottom of the image. Color zero in your palette must 
+      be black, and color 255 should be some other color (eg. a pale grey) 
+      that will be suitable for button borders and text. The colors from 1 
+      to 15 should be a gradient for use by the multicolored text, and 
+      colors 16 to 31 should be a gradient from black to white.
+
+      If you have an image using some other arbitrary palette, the easiest 
+      way to make it conform to these rules is to start with the palette 
+      being used by your file, and rearrange it so that the first 32 colors 
+      and color #255 contain the values needed by setup, moving the other 
+      colors used by your bitmap into the middle of the palette (it doesn't 
+      matter if a few colors go missing during this process, as long as 
+      there are other similar ones still in the palette). Import this 
+      palette into the grabber, and then grab your image (which is still 
+      using its original palette) on top of the current background bitmap. 
+      Right click on it, and select "Color Depth / 32 bit truecolor". Double 
+      click on your new palette to select it, and then right click on the 
+      bitmap again and select "Color Depth / 256 color palette" to reduce it 
+      back down to an eight bit image. It will now be using the correct 
+      palette!
+
+   *  Change the font in setup.dat. This should be sized 8x16, and each 
+      character should contain a color gradient from 1 (top) to 15 (bottom).
+

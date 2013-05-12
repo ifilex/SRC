@@ -1,0 +1,3 @@
+VERSION	equ	0231h
+MINVERS	equ	0221h
+VERS?	equ	<'2.31'>

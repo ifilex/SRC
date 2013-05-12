@@ -1,0 +1,11 @@
+Allegro 3.11: a game programming 
+library. SVGA, VBE 3.0, VBE/AF, 
+mode-X, 8/15/16/24/32 bpp, many 
+graphics drawing functions, clipping, 
+memory bitmaps, FLI/FLC player, MIDI 
+and sample player, mouse, keyboard, 
+joystick, high resolution timers, 
+LZSS file compression, multi-object 
+data files with grabber utility, 
+fixed point and 3d math routines, and 
+GUI dialog manager.

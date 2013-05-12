@@ -1,0 +1,10 @@
+# Cargador de drivers
+load=a:\lib\libxms.so
+# Version a emular de DOS
+ver=7
+files=40
+buffers=40
+lastdrive=z
+# load=a:\lib\cdrom.so /d:FDCD0001
+# load=a:\lib\cdrom.sys /d:MSCD000 /C0
+

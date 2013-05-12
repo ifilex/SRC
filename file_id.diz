@@ -1,0 +1,26 @@
+2OS CE v 1.0.0
+========================================================================
+
+ Este proyecto es la implementacion  de un sistema posix compilant sobre  
+un  sistema  en  tiempo  real  en  16 bit,  destinado   a   dispositivos   
+miniaturizados y de pocos recursos.
+
+
+Informacion de directorios
+========================================================================
+
+DIRECTORIO	DESCRIPCION
+
+BIN		Directorio de codigos fuentes de ejecutables
+BOOTS		Directorio de archivos ME generados para booteo
+DOC		Directorio de documentos originales de codigos empleados
+EMU		Directorio de programas de emulacion
+KERNEL		Directorio de fuentes del kernel 2OS/CE
+LIB		Directorio de codigos fuentes de librerias del sistema
+SDK		Directorio de librerias para trabajo en 2OS/CE
+BUILD.BAT	Archivo BAT de compilacion de los fuentes
+BOOTER.BAT	Archivo BAT para generar imagenes .IMG
+COPYING		Licencia GNU GPL 2.0
+Readme.txt	Archivo TXT que especifica los codigos empleados y donde 
+		ver la documentacion
+

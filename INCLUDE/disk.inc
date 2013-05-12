@@ -1,0 +1,28 @@
+MAXDRIVES	EQU	27
+
+_DISK_LOCAL	EQU	0001h		; _dos_remotedevice()
+_DISK_FLOPPY	EQU	0100h
+_DISK_NETWORK	EQU	0200h
+_DISK_SUBST	EQU	0400h
+_DISK_CDROOM	EQU	0800h
+
+_DISK_NOSUCHDRIVE	EQU	0	; _bios_disktype()
+_DISK_FLOPPYNOCHAIN	EQU	1
+_DISK_FLOPPYWIDTHCHAIN	EQU	2
+_DISK_HARDDRIVE		EQU	3
+
+GLOBAL	cp_stdpath:	BYTE
+GLOBAL	cp_stdmask:	BYTE
+
+GLOBALD	getdrv
+GLOBALP	chdrv,			:WORD
+GLOBALP	_disk_type,		:WORD
+GLOBALP	_disk_init,		:WORD
+GLOBALP	_disk_test,		:WORD
+GLOBALP	_disk_ready,		:WORD
+GLOBALP	_disk_retry,		:WORD
+GLOBALP	_disk_select,		:DWORD
+GLOBALP	_bios_disktype,		:WORD
+GLOBALP	_dos_remotedevice,	:WORD
+GLOBALP	@drvexist
+

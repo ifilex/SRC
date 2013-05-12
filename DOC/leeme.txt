@@ -1,0 +1,9 @@
+Directorio de documentacion de paquetes incluidos en 2OS CE, contienen la
+documentacion de cada proyecto como asi los copyrights.
+
+Vease los codigos de eos mantienen los copyrights de sus autores.
+
+Nota:
+
+ Si nota que falta algun copyright notifiquelo a http://meos.sf.net
+especificando cual es, para agregarlo.

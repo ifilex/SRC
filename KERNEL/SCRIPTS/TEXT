@@ -1,0 +1,4 @@
+Copia los archivos de sistema 2/OS CE y el int‚rprete de comandos al disco\n
+que especifique.\n
+\nSYS [unidad]\n \n
+      [unidad]  Especifica la unidad en la que los archivos se copiar n.

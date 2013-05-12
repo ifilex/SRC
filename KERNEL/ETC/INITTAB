@@ -1,0 +1,3 @@
+# Cargador de drivers
+load=a:\lib\libxms.so
+# load=a:\lib\libems.so

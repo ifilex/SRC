@@ -1,0 +1,63 @@
+; CuteMouse driver v1.8. Copyright (c) 1997-2001 Nagy Daniel
+;
+; Credits:
+; --------
+;
+; - Arkady V.Belousov <ark@mos.ru>: many bugfixes, optimizations and features
+; - Alain M. <alainm@pobox.com>: many ideas and message files
+; - Frank Pruefer <fp666@t-online.de>: documentation proofreading
+; - Mike Millen <mikemillen@ukgateway.net>: documentation proofreading
+; - Robert Riebisch <riebisch@bercom-berlin.de>: mode 13h positioning bugfix
+; - Fernando Papa Budzyn: self-loadhigh capability
+; - Martin <nocash@work.de>: optimizations
+; - Paul Schubert: much faster PS/2 codes
+; - All who helped me with ideas and codes
+;
+;
+; Contacts:
+; ---------
+;
+; mailto:nagyd@almos.vein.hu
+; http://www.vein.hu/~nagyd
+
+E_option        db      5,0dh,0ah,'Error: opcion invalida',0dh,0ah
+                db      'ingrese /? para obtener ayuda',0dh,0ah,'$'
+E_mousepresent  db      5,'Servicios de Mouse ya presentes',0dh,0ah,'$'
+E_notfound      db      5,'Error: driver no encontrado',0dh,0ah,'$'
+
+E_nocute        db      1,'Mouse no instalado.',0dh,0ah,'$'
+E_notunload     db      2,'Fallo en descarga de driver: error interno.',0dh,0ah,'$'
+S_unloaded      db      0,'Driver descargado.',0dh,0ah,'$'
+
+S_reset         db      'INIT: Residiendo como $'
+S_installed     db      'Instalado en $'
+S_forPS2        db      'PS/2',0dh,0ah,'$'
+S_atCOM		db	'COM'
+com_port	db	?,' ('
+S_atIO		db	'0000h/IRQ'
+IRQno		db	?
+S_for		db	') for $'
+S_forMS		db	'Microsoft mouse',0dh,0ah,'$'
+S_forWM		db	'Microsoft wheel mouse',0dh,0ah,'$'
+S_forLT		db	'Logitech MouseMan',0dh,0ah,'$'
+S_forMSYS	db	'Mouse Systems mouse',0dh,0ah,'$'
+
+Copyright       db      0dh,0ah,'INIT: Mouse Driver',0dh,0ah,'$'
+Syntax          db      0,'Opciones:',0dh,0ah
+                db      '  /P      - fuerza al modo PS/2',0dh,0ah
+                db      '  /S[c[i]] - fuerza al puerto COM c (c=1-4, por defecto COM1)',0dh,0ah
+                db      '            con el IRQ de linea i (i=2-7, por defecto es IRQ4 para COM1/3 y IRQ3',0dh,0ah
+                db      '            para COM2/4)',0dh,0ah
+;;+             db      '  /Aia    - fuerza al mouse a la direccion I/O (hexadecimal)',0dh,0ah
+;;+             db      '            con el IRQ de linea i (i=2-7)',0dh,0ah
+                db      '  /Y      - previene el modo Mouse Systems',0dh,0ah
+                db      '  /V      - busqueda reversa: busca al PS/2 luego al serial',0dh,0ah
+                db      '  /3      - fuerza a modo de 3-botones (para Microsoft y PS/2)',0dh,0ah
+                db      '  /R[h[v]] - resolucion horizontal/vertical (h,v=0-9; opcion R, no',0dh,0ah
+                db      '            argumento o 0 como argumentada luego R busca auto imagen, faltando',0dh,0ah
+                db      '            el segundo argumento se lo empleara para el primero)',0dh,0ah
+                db      '  /L      - modo de mano izquierda ',0dh,0ah
+                db      '  /B      - cancela el uso del mouse',0dh,0ah
+                db      '  /W      - carga el driver en el UMB',0dh,0ah
+                db      '  /U      - desistala el driver',0dh,0ah
+                db      '  /?      - muestra la ayuda',0dh,0ah,'$'

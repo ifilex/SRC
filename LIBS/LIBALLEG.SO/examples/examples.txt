@@ -1,0 +1,40 @@
+ex1 - simple "hello world" program
+ex2 - drawing onto memory bitmaps and then blitting them to the screen
+ex3 - using patterned drawing modes and sub-bitmaps
+ex4 - palette effects and color cycling
+ex5 - getting input from the keyboard
+ex6 - getting input from the mouse
+ex7 - using the timer (delays and interrupts)
+ex8 - double buffering in VGA mode 13h
+ex9 - double buffering and page flipping in mode-X
+ex10 - using fixed point maths
+ex11 - how to write directly to video memory
+ex12 - accessing the contents of datafiles
+ex13 - using the GUI routines
+ex14 - creating custom GUI objects
+ex15 - loading and displaying PCX and BMP files
+ex16 - playing MIDI music
+ex17 - playing digital samples
+ex18 - loading PCX files and bitmap stretching, by Grzegorz Ludorowski
+ex19 - mode-X hardware scrolling and split screens
+ex20 - mode-X triple buffering and retrace interrupt simulation
+ex21 - datafiles and sprite animation, by Grzegorz Ludorowski
+ex22 - 3d 'bouncy cubes' demo
+ex23 - constructing smooth movement paths from spline curves
+ex24 - lighting and translucency effects, by Owen Embury
+ex25 - viewing a 3d world from an arbitrary camera position
+ex26 - 3d starfield and lightsourced spaceship, by Dave Thomson
+ex27 - joystick input, by Grzegorz Hankiewicz
+ex28 - playing audio streams
+ex29 - truecolor pixel format conversions
+ex30 - RGB <-> HSV colorspace conversions
+ex31 - truecolor translucency
+ex32 - truecolor image loading and fades
+ex33 - a cool trick you can do with the MIDI player
+ex34 - appending datafiles onto your executable, by Grzegorz Hankiewicz
+ex35 - fake 12-bit truecolor on an 8 bit card, by Richard Mitton
+ex36 - gouraud shaded sprites, by Patrick Hogan
+ex37 - using offscreen video memory to store source graphics for VBE/AF
+ex38 - supporting different screen update methods in a single program
+ex39 - special effects using a color mapping table, by Grzegorz Hankiewicz
+ex40 - one way to do colored lighting effects in a hicolor video mode

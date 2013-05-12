@@ -1,0 +1,24 @@
+@ECHO OFF
+ECHO.
+ECHO Compilando bin2c.com
+ECHO.
+MAKE -fbin2c.mak
+ECHO.
+ECHO Compilando BOOT..
+ECHO.
+NASM -dISFAT12 BOOT.ASM -oFAT16.bin
+NASM -dISFAT16 BOOT.ASM -oFAT32.bin
+BIN2C FAT16.BIN FAT16.H Mfat16
+BIN2C FAT32.BIN FAT32.H Mfat32
+ECHO.
+ECHO Compilando sys.com
+ECHO.
+MAKE -fsys.mak
+UPX -9 SYS.COM
+MOVE SYS.COM ..\..\..\..\BOOT
+rem DEL SYS.COM
+DEL *.OBJ
+DEL *.MAP
+DEL *.BIN
+MOVE BIN2C.COM ..\..\..\..\USR\SBIN
+
